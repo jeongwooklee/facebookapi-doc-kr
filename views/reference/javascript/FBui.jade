@@ -39,5 +39,53 @@ block content
       }
     );
     ~~~~
-    
+    #### 파라메터
+    <table>
+      <tbody>
+      <tr>
+        <th>이름</th>
+        <th>종류</th>
+        <th>설명</th>
+      </tr>
+      <tr>
+        <td class="name">params</td>
+        <td class="type">Object</td>
+        <td>
+          <p>The required arguments vary based on the method being used, but specifying the method itself is mandatory. Please find the full list of dialogs that can be used as values for method in the <a href="/docs/reference/dialogs">Dialogs documentation</a>. If <em>display</em> is not specified, then iframe dialogs will be used when possible, and popups otherwise.</p>
+          <table>
+            <thead>
+            <tr>
+              <th>Property</th>
+              <th>Type</th>
+              <th>Description</th>
+              <th>Argument</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>method</td>
+              <td>String</td>
+              <td>The UI dialog to invoke.</td>
+              <td><strong>Required</strong></td>
+            </tr>
+            <tr>
+              <td>display</td>
+              <td>String</td>
+              <td>Specify <code>"popup"</code> to force popups. See <a href="/docs/reference/dialogs">Dialogs docs</a> for other display types.</td>
+              <td><strong>Optional</strong></td>
+            </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class="name">cb</td>
+        <td class="type">Function</td>
+        <td>
+          <p>Callback function to handle the result. Notall methods may have a response.</p>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+        
 

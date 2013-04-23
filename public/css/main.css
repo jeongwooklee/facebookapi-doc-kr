@@ -16,6 +16,12 @@ span.green,
   border: 0 none;
   text-decoration: none;
 }
+.table .name {
+  color: green;
+}
+.table .table th {
+  border-bottom: 1px solid #ddd;
+}
 
 .aside li a {
   word-break: break-all;
