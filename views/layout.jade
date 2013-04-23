@@ -1,7 +1,28 @@
 doctype 5
 html
   head
-    title Facebook Api Docs KR
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(http-equiv="X-UA-Compatible", content="IE=Edge")
+    meta(name="viewport", content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no")
+    base(href="/")
+    title Facebook api KR
+    link(rel="stylesheet", href="/css/lib/bootstrap/css/bootstrap.min.css")
+    style
+      body {padding-top: 60px;}
+    link(rel="stylesheet", href="/css/lib/bootstrap/css/bootstrap-responsive.min.css")
+    link(rel="stylesheet", href="/css/main.css")
   body
-    block content
+    include includes/nav
+    .container.content
+      .row
+        .span3
+          - if (type=='javascript')
+            include includes/aside/javascript
+          - else
+            include includes/aside/main
+        .span9
+          block content
+    script(src="/js/lib/jquery/jquery-1.9.0.min.js")
+    script(src="/js/lib/bootstrap/bootstrap.min.js")
+    script(src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js")
+    script
+      $('pre').addClass('prettyprint')

@@ -1,4 +1,104 @@
 extends ../../layout
 
 block content
-  h1 FB.api
+  :markdown
+    ### FB.api
+    ###### [SDK Reference](#) > [javaScript](#) > [FB.api](/reference/javascript/FB.api)
+    ---
+    #### 개요
+    FB.api는 [Graph API](#) 또는 [사용중지된 REST API](#)를 호출합니다.
+    #### 예제
+    **Facebook Platform Page Object** 가져오기 : 
+    ~~~~
+    FB.api('/platform', function(response) {
+      alert(response.company_overview);
+    });
+    ~~~~
+    [인증된 사용자](#)가 있는 경우, 해당 사용자의 **User Object** 가져오기 : 
+    ~~~~
+    FB.api('/me', function(response) {
+      alert(response.name);
+    });
+    ~~~~
+    *Facebook Platform Page Object* 에 연결된(작성된) 가장 최신 **Post Objects** 3개 가져오기 :
+    ~~~~
+    FB.api('/platform/posts', { limit: 3 }, function(response) {
+      for (var i=0, l=response.length; i<l; i++) {
+        var post = response[i];
+        if (post.message) {
+          alert('Message: ' + post.message);
+        } else if (post.attachment && post.attachment.name) {
+          alert('Attachment: ' + post.attachment.name);
+        }
+      }
+    });
+    ~~~~
+    [publish_stream](#) 권한이 있는 [인증된 사용자](#)가 있고, 해당 사용자의 담벼락에 게시하기를 원하는 경우 : 
+    ~~~~
+    var body = 'Reading JS SDK documentation';
+    FB.api('/me/feed', 'post', { message: body }, function(response) {
+      if (!response || response.error) {
+        alert('Error occured');
+      } else {
+        alert('Post ID: ' + response.id);
+      }
+    });
+    ~~~~
+    또는 이전에 게시 된 게시물을 삭제하려는 경우 :
+    ~~~~
+    var postId = '1234567890';
+    FB.api(postId, 'delete', function(response) {
+      if (!response || response.error) {
+        alert('Error occured');
+      } else {
+        alert('Post was deleted');
+      }
+    });
+    ~~~~
+    #### 모범 사례
+    API를 당신의 서버를 통해 프록시 시키는 것 보다 의 페이스북에 직접 호출하는 것이 응용프로그램의 성능을 더욱 향상 시킵니다.
+
+    API는 페이스북의 거의 모든 측면을 다룹니다. 사용자나 객체의 ID를 알고있는 경우 [이름](#)이나 [프로필 사진](#)같은 공용 데이터를 사용할 수 있습니다. 대부분의 API 사용 여부는 [연결 상태와 사용자가 응용프로그램에 부여한 권한](#)에 따라 달라집니다.
+    #### 이전 REST API 호출
+    FB.api는 [이전 REST API](#)를 호출하는데 역시 사용할 수 있습니다. 예를 들어 [links.getStats](#)를 호출하려면 :
+    ~~~~
+    FB.api(
+      {
+        method: 'links.getStats',
+        urls: 'facebook.com,developers.facebook.com'
+      },
+      function(response) {
+        alert(
+          'Total: ' + (response[0].total_count + response[1].total_count));
+      }
+    );
+    ~~~~
+    #### 파라메터
+    <table class="table table-bordered">
+      <tr>
+        <th>이름</th>
+        <th>종류</th>
+        <th>설명</th>
+      </tr>
+      <tr>
+        <td class="name">path</td>
+        <td>String</td>
+        <td>url 경로</td>
+      </tr>
+      <tr>
+        <td class="name">method</td>
+        <td>String</td>
+        <td>http 메소드(기본은 "GET")</td>
+      </tr>
+      <tr>
+        <td class="name">params</td>
+        <td>Object</td>
+        <td>쿼리를 위한 파라메터</td>
+      </tr>
+      <tr>
+        <td class="name">cb</td>
+        <td>Function</td>
+        <td>응답을 제어하기 위한 콜백 함수</td>
+      </tr>
+    </table>
+
