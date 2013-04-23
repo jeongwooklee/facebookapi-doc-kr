@@ -9,6 +9,13 @@ textarea {
   font-family: '나눔고딕',NanumGothic,'돋움',dotum,'Helvetica Neue',Helvetica,Arial,sans-serif;
   font-size: 12px;
 }
+span.green,
+.table code {
+  background: none;
+  color: green;
+  border: 0 none;
+  text-decoration: none;
+}
 
 .aside li a {
   word-break: break-all;
@@ -33,12 +40,4 @@ h4 {
 }
 .content {
   margin-bottom: 50px;
-}
-.table .name {
-  color: green;
-}
-.table code {
-  background: none;
-  color: green;
-  border: 0 none;
 }

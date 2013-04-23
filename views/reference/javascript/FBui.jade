@@ -1,0 +1,43 @@
+extends ../../layout
+
+block content
+  :markdown
+    ### FB.ui
+    ###### [SDK Reference](#) > [javaScript](#) > [FB.ui](/reference/javascript/FB.ui)
+    ---
+    #### 개요
+    FB.ui is a generic helper method for triggering [Dialogs](#) which allow the user to take some action.
+
+    These dialogs include:
+    
+    - The [Feed Dialog](#) allows a user to post a story to their Timeline and to their friends' News Feeds
+    - The [OAuth Dialog](#) allows a user to authorize an application as part of an authentication flow.
+    - The [Add Page Tab](#) Dialog allows a user to add an application to a Facebook Page which they administer.
+    - The [Friends Dialog](#) allows a user to send a friend request to another user.
+    - The [Pay Dialog](#) allows a user to make a purchase using Facebook Credits.
+    - The [Requests Dialog](#) allows a user to send a request to one or more of their friends
+    - The [Send Dialog](#) allows a user to send a Facebook Message to one or more of their friends.
+
+    #### 예제
+    To invoke the [Feed Dialog](#), use <span class="green">feed</span> as the method, and optionally specify other properties as documented in the Feed Dialog documentation:
+    ~~~~
+    FB.ui(
+      {
+        method: 'feed',
+        name: 'Facebook Dialogs',
+        link: 'http://developers.facebook.com/docs/reference/dialogs/',
+        picture: 'http://fbrell.com/f8.jpg',
+        caption: 'Reference Documentation',
+        description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'
+      },
+      function(response) {
+        if (response && response.post_id) {
+          alert('Post was published.');
+        } else {
+          alert('Post was not published.');
+        }
+      }
+    );
+    ~~~~
+    
+
