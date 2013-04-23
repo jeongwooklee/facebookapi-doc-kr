@@ -37,3 +37,8 @@ h4 {
 .table .name {
   color: green;
 }
+.table code {
+  background: none;
+  color: green;
+  border: 0 none;
+}

@@ -1,0 +1,103 @@
+extends ../../layout
+
+block content
+  :markdown
+    ### FB.init
+    ###### [SDK Reference](#) > [javaScript](#) > [FB.init](/reference/javascript/FB.init)
+    ---
+    #### 개요
+    [JavaScript SDK 로딩](#)이 완료된 후, 초기화를 위해 당신의 app ID를 사용하여 FB.init를 호출하십시오. 이것은 당신이 Facebook API를 호출할 수 있도록 합니다.
+
+    **노트**: 만약 당신이 app ID를 사용하고 있다면, 모든 메소드는 **반드시** FB.init 이후에 호출되어야 합니다.
+    #### 파라메터
+    <table class="table table-bordered">
+      <tr>
+        <th>이름</th>
+        <th>종류</th>
+        <th>설명</th>
+      </tr>
+      <tr>
+        <td class="name">options</td>
+        <td>Object</td>
+        <td>옵션은 아래를 참조하십시오.</td>
+      </tr>
+    </table>
+
+    #### 옵션들
+    <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>Property</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Argument</th>
+      <th>Default</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><code>appId</code></td>
+      <td>String</td>
+      <td>어플리케이션 ID.</td>
+      <td><em>Optional</em></td>
+      <td><code>null</code></td>
+    </tr>
+    <tr>
+      <td><code>cookie</code></td>
+      <td>Boolean</td>
+      <td><code>true</code>로 cookie를 지원.</td>
+      <td><em>Optional</em></td>
+      <td><code>false</code></td>
+    </tr>
+    <tr>
+      <td><code>logging</code></td>
+      <td>Boolean</td>
+      <td><code>false</code>로 로깅을 중지.</td>
+      <td><em>Optional</em></td>
+      <td><code>true</code></td>
+    </tr>
+    <tr>
+      <td><code>status</code></td>
+      <td>Boolean</td>
+      <td><code>true</code> 로 최신의 상태를 가져옴.</td>
+      <td><em>Optional</em></td>
+      <td><code>true</code></td>
+    </tr>
+    <tr>
+      <td><code>xfbml</code></td>
+      <td>Boolean</td>
+      <td><code>true</code> 로 XFBML 테그들을 파싱.</td>
+      <td><em>Optional</em></td>
+      <td><code>false</code></td>
+    </tr>
+    <tr>
+      <td><code>channelUrl</code></td>
+      <td>String</td>
+      <td>사용자 정의 채널파일의 URL을 지정합니다. 이 파일은 자바스크립트 SDK의 URL을 가르키는 하나의 스크립트 요소를 포함해야 합니다.</td>
+      <td><em>Optional</em></td>
+      <td><code>null</code></td>
+    </tr>
+    <tr>
+      <td><code>authResponse</code></td>
+      <td>Object</td>
+      <td><code>getAuthResponse</code>에서 검색할 객체를 수동으로 설정합니다.</td>
+      <td><em>Optional</em></td>
+      <td><code>true</code></td>
+    </tr>
+    <tr>
+      <td><code>frictionlessRequests</code></td>
+      <td>boolean</td>
+      <td><a href="#">Frictionless Requests</a> 보기</td>
+      <td><em>Optional</em></td>
+      <td><code>false</code></td>
+    </tr>
+    <tr>
+      <td><code>hideFlashCallback</code></td>
+      <td>Object</td>
+      <td><a href="#">Custom Flash Hide Callback</a> 보기</td>
+      <td><em>Optional</em></td>
+      <td><code>null</code></td>
+    </tr>
+    </tbody>
+    </table>
+        
