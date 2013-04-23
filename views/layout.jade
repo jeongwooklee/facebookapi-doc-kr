@@ -4,17 +4,20 @@ html
     meta(http-equiv="X-UA-Compatible", content="IE=Edge")
     meta(name="viewport", content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no")
     base(href="/")
-    title Facebook api KR
+    title FacebookApi KR
     link(rel="stylesheet", href="/css/lib/bootstrap/css/bootstrap.min.css")
     style
       body {padding-top: 60px;}
     link(rel="stylesheet", href="/css/lib/bootstrap/css/bootstrap-responsive.min.css")
     link(rel="stylesheet", href="/css/main.css")
   body
-    include includes/nav
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .nav-container.container
+          a.brand(href="/") FacebookApi KR
     .container.content
       .row
-        .span3
+        .span3.aside
           - if (type=='javascript')
             include includes/aside/javascript
           - else
