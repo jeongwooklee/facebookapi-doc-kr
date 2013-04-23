@@ -1,0 +1,14 @@
+extends ../../layout
+
+block content
+  :markdown
+    ### FB.api
+    ###### [SDK Reference](#) > [javaScript](#) > [FB.getAuthResponse](/reference/javascript/FB.getAuthResponse)
+    ---
+    *Synchronous* accessor for the current authResponse. The **synchronous** nature of this method is what sets it apart from the other login methods.
+
+    This method is similar in nature to [FB.getLoginStatus()](#), but it returns **just** the authResponse object. Many parts of your application already assume the user is connected with your application. In such cases, you may want to avoid the overhead of making asynchronous calls.
+
+    NOTE: You should never use this method at *page load* time. Generally, it is safer to use [FB.getLoginStatus()](#) if you are unsure.
+
+    For documentation on the AuthResponse object itself, please see [FB.getLoginStatus()](#)
