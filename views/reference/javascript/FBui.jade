@@ -6,20 +6,20 @@ block content
     ###### [SDK Reference](#) > [javaScript](#) > [FB.ui](/reference/javascript/FB.ui)
     ---
     #### 개요
-    FB.ui is a generic helper method for triggering [Dialogs](#) which allow the user to take some action.
+    FB.ui는 사용자가 어떤 작업을 수행할 수 있도록 해주는 [Dialogs](#)를 실행할 수 있는 일반적인 핼퍼 메서드입니다.
 
-    These dialogs include:
+    dialogs의 종류는 다음과 같습니다 :
     
-    - The [Feed Dialog](#) allows a user to post a story to their Timeline and to their friends' News Feeds
-    - The [OAuth Dialog](#) allows a user to authorize an application as part of an authentication flow.
-    - The [Add Page Tab](#) Dialog allows a user to add an application to a Facebook Page which they administer.
-    - The [Friends Dialog](#) allows a user to send a friend request to another user.
-    - The [Pay Dialog](#) allows a user to make a purchase using Facebook Credits.
-    - The [Requests Dialog](#) allows a user to send a request to one or more of their friends
-    - The [Send Dialog](#) allows a user to send a Facebook Message to one or more of their friends.
+    - [Feed Dialog](#)로 자신이나 친구들의 담벼락에 글을 게시할 수 있습니다.
+    - [OAuth Dialog](#)로 사용자가 응용프로그램에 권한을 부여할 수 있습니다. 이것은 인증 과정에 일부입니다.
+    - [Add Page Tab](#)로 관리하는 페이스북 페이지에 응용프로그램을 추가할 수 있습니다.
+    - [Friends Dialog](#)로 다른 사용자에게 친구 요청을 보낼 수 있습니다.
+    - [Pay Dialog](#)로 페이스북 크래딧을 이용하여 결제를 할 수 있도록 합니다.
+    - [Requests Dialog](#)로 자신의 친구 한명, 혹은 그 이상에게 요청을 보낼 수 있습니다.
+    - [Send Dialog](#)로 자신의 친구 한명, 혹은 그 이상에게 페이스북 메시지를 보낼 수 있습니다.
 
     #### 예제
-    To invoke the [Feed Dialog](#), use <span class="green">feed</span> as the method, and optionally specify other properties as documented in the Feed Dialog documentation:
+    [Feed Dialog](#)를 호출하고, 메소드로 <span class="green">feed</span>를 사용하며, 선택적으로 [Feed Dialog](#) 문서에 기술된 다른 속성을 지정할 수 있습니다 :
     ~~~~
     FB.ui(
       {
@@ -51,28 +51,28 @@ block content
         <td class="name">params</td>
         <td class="type">Object</td>
         <td>
-          <p>The required arguments vary based on the method being used, but specifying the method itself is mandatory. Please find the full list of dialogs that can be used as values for method in the <a href="/docs/reference/dialogs">Dialogs documentation</a>. If <em>display</em> is not specified, then iframe dialogs will be used when possible, and popups otherwise.</p>
+          <p>사용되는 메서드에 따라 필수 인수는 다르지만, 메서드 자체는 반드시 지정해야 합니다. [Dialogs documentation](#)에서 메서드 값으로 사용할 수 있는 dialog의 전체 목록을 찾아주시기 바랍니다. 만약 <em>display</em>가 지정되어 있지 않으면, 우선 iframe이 사용되고, iframe사용이 불가능한 경우 popup이 사용됩니다.</p>
           <table>
             <thead>
             <tr>
-              <th>Property</th>
-              <th>Type</th>
-              <th>Description</th>
-              <th>Argument</th>
+              <th>속성</th>
+              <th>종류</th>
+              <th>설명</th>
+              <th>인수</th>
             </tr>
             </thead>
             <tbody>
             <tr>
               <td>method</td>
               <td>String</td>
-              <td>The UI dialog to invoke.</td>
-              <td><strong>Required</strong></td>
+              <td>호출할 UI Dialog</td>
+              <td><strong>필수</strong></td>
             </tr>
             <tr>
               <td>display</td>
               <td>String</td>
-              <td>Specify <code>"popup"</code> to force popups. See <a href="/docs/reference/dialogs">Dialogs docs</a> for other display types.</td>
-              <td><strong>Optional</strong></td>
+              <td><span class="green">"popup"</span> 으로 팝업으로 뜨도록 합니다.<br>다른 디스플레이 타입은 [Dialogs docs](#)을 참고하시기 바랍니다.</td>
+              <td><strong>선택</strong></td>
             </tr>
             </tbody>
           </table>
@@ -82,7 +82,7 @@ block content
         <td class="name">cb</td>
         <td class="type">Function</td>
         <td>
-          <p>Callback function to handle the result. Notall methods may have a response.</p>
+          <p>결과를 제어하기 위한 콜백함수입니다. Not all methods may have a response.</p>
         </td>
       </tr>
       </tbody>
